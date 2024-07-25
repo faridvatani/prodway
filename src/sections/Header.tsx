@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Banner } from "./Banner";
-import { Logo, Menu } from "@/assets";
+import { Logo, Menu } from "@/src/assets";
 
 export const Header = () => {
   return (

@@ -1,4 +1,4 @@
-import { ArrowRight } from "@/assets";
+import { ArrowRight } from "@/src/assets";
 
 export const Banner = () => {
   return (
