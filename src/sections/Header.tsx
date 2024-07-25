@@ -4,7 +4,7 @@ import { Logo, Menu } from "@/src/assets";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 backdrop-blur-md z-20">
       <Banner />
       <div className="py-5">
         <div className="container">
