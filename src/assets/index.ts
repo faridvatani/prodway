@@ -13,3 +13,4 @@ export { default as QuantumLogo } from "@/src/assets/logo-quantum.png";
 export { default as ProductImage } from "@/src/assets/product-image.png";
 export { default as PyramidImage } from "@/src/assets/pyramid.png";
 export { default as TubeImage } from "@/src/assets/tube.png";
+export { default as CheckIcon } from "@/src/assets/check.svg";
