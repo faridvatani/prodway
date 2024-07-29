@@ -23,3 +23,5 @@ export { default as Avatar6 } from "@/src/assets/avatar-6.png";
 export { default as Avatar7 } from "@/src/assets/avatar-7.png";
 export { default as Avatar8 } from "@/src/assets/avatar-8.png";
 export { default as Avatar9 } from "@/src/assets/avatar-9.png";
+export { default as StarImage } from "@/src/assets/star.png";
+export { default as SpringImage } from "@/src/assets/spring.png";
