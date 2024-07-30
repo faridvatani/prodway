@@ -25,3 +25,8 @@ export { default as Avatar8 } from "@/src/assets/avatar-8.png";
 export { default as Avatar9 } from "@/src/assets/avatar-9.png";
 export { default as StarImage } from "@/src/assets/star.png";
 export { default as SpringImage } from "@/src/assets/spring.png";
+export { default as SocialX } from "@/src/assets/social-x.svg";
+export { default as SocialInstagram } from "@/src/assets/social-instagram.svg";
+export { default as SocialLinkedIn } from "@/src/assets/social-linkedin.svg";
+export { default as SocialPinterest } from "@/src/assets/social-pinterest.svg";
+export { default as SocialYoutube } from "@/src/assets/social-youtube.svg";

@@ -9,7 +9,7 @@ export const Header = () => {
       <div className="py-5">
         <div className="container">
           <div className="flex justify-between items-center">
-            <Image src={Logo} alt="Prodway saas logo" width={40} height={40} />
+            <Image src={Logo} alt="Prodway SaaS logo" width={40} height={40} />
             <Menu className="w-5 h-5 md:hidden" />
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
               <a href="#">About</a>

@@ -5,6 +5,7 @@ import { ProductShowcase } from "@/src/sections/ProductShowcase";
 import { Pricing } from "@/src/sections/Pricing";
 import { Testimonials } from "@/src/sections/Testimonials";
 import { CallToAction } from "@/src/sections/CallToAction";
+import { Footer } from "@/src/sections/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <CallToAction />
+      <Footer />
     </main>
   );
 }
