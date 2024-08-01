@@ -1,6 +1,9 @@
-interface BannerText {
-  main: string;
-  cta: string;
+interface BannerData {
+  title: string;
+  link: {
+    name: string;
+    href: string;
+  };
 }
 
 interface HeaderData {
@@ -47,9 +50,12 @@ interface FooterData {
   copyRight: string;
 }
 
-export const bannerText: BannerText = {
-  main: "Streamline your workflow and boost your productivity",
-  cta: "Get started for free",
+export const bannerData: BannerData = {
+  title: "Streamline your workflow and boost your productivity",
+  link: {
+    name: "Get started for free",
+    href: "#",
+  },
 };
 
 export const headerData: HeaderData = {
