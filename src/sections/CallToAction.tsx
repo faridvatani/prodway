@@ -3,6 +3,7 @@ import { ArrowRight, StarImage, SpringImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { callToActionData } from "@/src/constants";
+import Link from "next/link";
 
 export const CallToAction = () => {
   const sectionRef = useRef(null);
@@ -42,13 +43,19 @@ export const CallToAction = () => {
           />
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary">
-            {callToActionData.primaryButton}
-          </button>
-          <button className="btn btn-text gap-1">
-            <span>{callToActionData.secondaryButton}</span>
+          <Link
+            href={callToActionData.primaryButton.href}
+            className="btn btn-primary"
+          >
+            {callToActionData.primaryButton.name}
+          </Link>
+          <Link
+            href={callToActionData.secondaryButton.href}
+            className="btn btn-text gap-1"
+          >
+            <span>{callToActionData.secondaryButton.name}</span>
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -41,8 +41,11 @@ interface TestimonialsData {
 interface CallToActionData {
   title: string;
   description: string;
-  primaryButton: string;
-  secondaryButton: string;
+  primaryButton: {
+    name: string;
+    href: string;
+  };
+  secondaryButton: { name: string; href: string };
 }
 
 interface FooterData {
@@ -104,8 +107,8 @@ export const callToActionData: CallToActionData = {
   title: "Sign up for free today",
   description:
     "Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.",
-  primaryButton: "Get for free",
-  secondaryButton: "Learn more",
+  primaryButton: { name: "Get for free", href: "#" },
+  secondaryButton: { name: "Learn more", href: "#" },
 };
 
 export const footerData: FooterData = {
