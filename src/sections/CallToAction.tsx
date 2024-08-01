@@ -2,6 +2,7 @@
 import { ArrowRight, StarImage, SpringImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { callToActionData } from "@/src/constants";
 
 export const CallToAction = () => {
   const sectionRef = useRef(null);
@@ -17,10 +18,9 @@ export const CallToAction = () => {
     >
       <div className="container">
         <div className="section-heading relative">
-          <h2 className="section-title">Sign up for free today</h2>
+          <h2 className="section-title">{callToActionData.title}</h2>
           <p className="section-description mt-5">
-            Celebrate the joy of accomplishment with an app designed to track
-            your progress and motivate your efforts.
+            {callToActionData.description}
           </p>
           <motion.img
             src={StarImage.src}
@@ -42,9 +42,11 @@ export const CallToAction = () => {
           />
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary">Get for free</button>
+          <button className="btn btn-primary">
+            {callToActionData.primaryButton}
+          </button>
           <button className="btn btn-text gap-1">
-            <span>Learn More</span>
+            <span>{callToActionData.secondaryButton}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

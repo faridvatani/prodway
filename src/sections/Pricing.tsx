@@ -2,69 +2,15 @@
 import { CheckIcon } from "@/src/assets";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-
-const pricingTiers = [
-  {
-    title: "Free",
-    monthlyPrice: 0,
-    buttonText: "Get started for free",
-    popular: false,
-    inverse: false,
-    features: [
-      "Up to 5 project members",
-      "Unlimited tasks and projects",
-      "2GB storage",
-      "Integrations",
-      "Basic support",
-    ],
-  },
-  {
-    title: "Pro",
-    monthlyPrice: 9,
-    buttonText: "Sign up now",
-    popular: true,
-    inverse: true,
-    features: [
-      "Up to 50 project members",
-      "Unlimited tasks and projects",
-      "50GB storage",
-      "Integrations",
-      "Priority support",
-      "Advanced support",
-      "Export support",
-    ],
-  },
-  {
-    title: "Business",
-    monthlyPrice: 19,
-    buttonText: "Sign up now",
-    popular: false,
-    inverse: false,
-    features: [
-      "Up to 5 project members",
-      "Unlimited tasks and projects",
-      "200GB storage",
-      "Integrations",
-      "Dedicated account manager",
-      "Custom fields",
-      "Advanced analytics",
-      "Export capabilities",
-      "API access",
-      "Advanced security features",
-    ],
-  },
-];
+import { pricingTiers, pricingData } from "@/src/constants";
 
 export const Pricing = () => {
   return (
     <section className="py-24 bg-white">
       <div className="container">
         <div className="section-heading">
-          <h2 className="section-title">Pricing</h2>
-          <p className="section-description mt-5">
-            Free forever. Upgrade for unlimited tasks, better security, and
-            exclusive features.
-          </p>
+          <h2 className="section-title">{pricingData.title}</h2>
+          <p className="section-description mt-5">{pricingData.description}</p>
         </div>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center gap-6 items-center mt-10">
           {pricingTiers.map(
@@ -113,10 +59,10 @@ export const Pricing = () => {
                 </div>
                 <div className="flex items-baseline gap-1 mt-[30px]">
                   <span className="text-4xl font-bold tracking-tighter leading-none">
-                    ${monthlyPrice}
+                    {pricingData.currency + monthlyPrice}
                   </span>
                   <span className="tracking-tight font-bold text-black/50">
-                    /month
+                    {pricingData.billingPeriod}
                   </span>
                 </div>
                 <button

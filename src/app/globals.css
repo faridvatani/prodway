@@ -8,7 +8,7 @@
   }
 
   .btn {
-    @apply inline-flex align-baseline justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg;
+    @apply inline-flex items-center justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg;
   }
 
   .btn-primary {

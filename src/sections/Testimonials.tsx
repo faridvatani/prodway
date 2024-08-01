@@ -1,75 +1,9 @@
 "use client";
-import {
-  Avatar1,
-  Avatar2,
-  Avatar3,
-  Avatar4,
-  Avatar5,
-  Avatar6,
-  Avatar7,
-  Avatar8,
-  Avatar9,
-} from "@/src/assets";
+
+import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import React from "react";
-
-const testimonials = [
-  {
-    text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
-    imageSrc: Avatar1.src,
-    name: "Jamie Rivera",
-    username: "@jamietechguru00",
-  },
-  {
-    text: "Our team's productivity has skyrocketed since we started using this tool. ",
-    imageSrc: Avatar2.src,
-    name: "Josh Smith",
-    username: "@jjsmith",
-  },
-  {
-    text: "This app has completely transformed how I manage my projects and deadlines.",
-    imageSrc: Avatar3.src,
-    name: "Morgan Lee",
-    username: "@morganleewhiz",
-  },
-  {
-    text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
-    imageSrc: Avatar4.src,
-    name: "Casey Jordan",
-    username: "@caseyj",
-  },
-  {
-    text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
-    imageSrc: Avatar5.src,
-    name: "Taylor Kim",
-    username: "@taylorkimm",
-  },
-  {
-    text: "The customizability and integration capabilities of this app are top-notch.",
-    imageSrc: Avatar6.src,
-    name: "Riley Smith",
-    username: "@rileysmith1",
-  },
-  {
-    text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
-    imageSrc: Avatar7.src,
-    name: "Jordan Patels",
-    username: "@jpatelsdesign",
-  },
-  {
-    text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
-    imageSrc: Avatar8.src,
-    name: "Sam Dawson",
-    username: "@dawsontechtips",
-  },
-  {
-    text: "Its user-friendly interface and robust features support our diverse needs.",
-    imageSrc: Avatar9.src,
-    name: "Casey Harper",
-    username: "@casey09",
-  },
-];
+import { testimonials, testimonialsData } from "@/src/constants";
 
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
@@ -127,12 +61,11 @@ export const Testimonials = () => {
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">
-            <div className="tag">Testimonials</div>
+            <div className="tag">{testimonialsData.tag}</div>
           </div>
-          <h2 className="section-title mt-5">What our users say</h2>
+          <h2 className="section-title mt-5">{testimonialsData.title}</h2>
           <p className="section-description mt-5">
-            From intuitive design to powerful features, our app has become an
-            essential tool for users around the world.
+            {testimonialsData.description}
           </p>
         </div>
 

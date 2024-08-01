@@ -7,6 +7,7 @@ import {
 } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { heroData } from "@/src/constants";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -23,21 +24,19 @@ export const Hero = () => {
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
-            <div className="tag">Version 2.0 is here</div>
+            <div className="tag">{heroData.tag}</div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
-              Pathway to productivity
+              {heroData.title}
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Celebrate the joy of accomplishment with an app designed to track
-              your progress, motivate your efforts, and celebrate your
-              successes.
+              {heroData.description}
             </p>
             <div className="flex items-center gap-1 mt-[30px]">
               <button type="button" className="btn btn-primary">
-                Get for free
+                {heroData.primaryButton}
               </button>
               <button type="button" className="btn btn-text gap-1">
-                <span>Learn more</span>
+                <span>{heroData.secondaryButton}</span>
                 <Icon className="h-5 w-5" />
               </button>
             </div>

@@ -9,6 +9,7 @@ import {
 } from "@/src/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { footerData } from "@/src/constants";
 
 export const Footer = () => {
   return (
@@ -41,12 +42,11 @@ export const Footer = () => {
         </div>
 
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          <a href="#">About</a>
-          <a href="#">Features</a>
-          <a href="#">Customers</a>
-          <a href="#">Pricing</a>
-          <a href="#">Help</a>
-          <a href="#">Careers</a>
+          {footerData.footerLinks.map((link, index) => (
+            <a key={index} href={link.href}>
+              {link.name}
+            </a>
+          ))}
         </nav>
         <div className="flex justify-center gap-6 mt-6">
           <SocialX className="cursor-pointer" />
@@ -55,9 +55,7 @@ export const Footer = () => {
           <SocialPinterest className="cursor-pointer" />
           <SocialYoutube className="cursor-pointer" />
         </div>
-        <p className="mt-6">
-          &copy; 2024 Your Company, Inc. All rights reserved.
-        </p>
+        <p className="mt-6">&copy;{footerData.copyRight}</p>
       </div>
     </footer>
   );

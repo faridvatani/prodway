@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ProductImage, PyramidImage, TubeImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { productShowcaseData } from "@/src/constants";
 
 export const ProductShowcase = () => {
   const sectionRef = useRef(null);
@@ -20,14 +21,11 @@ export const ProductShowcase = () => {
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">
-            <div className="tag">Boost your productivity</div>
+            <div className="tag">{productShowcaseData.tag}</div>
           </div>
-          <h2 className="section-title mt-5">
-            A more effective way to track progress
-          </h2>
+          <h2 className="section-title mt-5">{productShowcaseData.title}</h2>
           <p className="section-description mt-5">
-            Celebrate the joy of accomplishment with an app designed to track
-            your progress and motivate your efforts.
+            {productShowcaseData.description}
           </p>
         </div>
         <div className="relative">
