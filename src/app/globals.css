@@ -12,7 +12,7 @@
   }
 
   .btn-primary {
-    @apply bg-black text-white;
+    @apply bg-black text-white hover:bg-black/80;
   }
 
   .btn-text {

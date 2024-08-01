@@ -68,7 +68,7 @@ export const Pricing = () => {
                 <button
                   className={twMerge(
                     "btn btn-primary w-full mt-[30px]",
-                    inverse === true && "bg-white text-black",
+                    inverse === true && "bg-white text-black hover:bg-white/80",
                   )}
                 >
                   {buttonText}

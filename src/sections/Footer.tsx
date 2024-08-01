@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { footerData } from "@/src/constants";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -43,17 +44,17 @@ export const Footer = () => {
 
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
           {footerData.footerLinks.map((link, index) => (
-            <a key={index} href={link.href}>
+            <Link key={index} href={link.href} className="hover:text-white">
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex justify-center gap-6 mt-6">
-          <SocialX className="cursor-pointer" />
-          <SocialInstagram className="cursor-pointer" />
-          <SocialLinkedIn className="cursor-pointer" />
-          <SocialPinterest className="cursor-pointer" />
-          <SocialYoutube className="cursor-pointer" />
+          <SocialX className="hover:text-white cursor-pointer" />
+          <SocialInstagram className="hover:text-white cursor-pointer" />
+          <SocialLinkedIn className="hover:text-white cursor-pointer" />
+          <SocialPinterest className="hover:text-white cursor-pointer" />
+          <SocialYoutube className="hover:text-white cursor-pointer" />
         </div>
         <p className="mt-6">&copy;{footerData.copyRight}</p>
       </div>

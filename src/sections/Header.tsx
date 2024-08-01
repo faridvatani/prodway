@@ -15,11 +15,11 @@ export const Header = () => {
             <Menu className="w-5 h-5 md:hidden" />
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
               {headerData.headerLinks.map((link) => (
-                <Link href={link.href} key={link.name}>
+                <Link href={link.href} key={link.name} className="hover:text-black">
                   {link.name}
                 </Link>
               ))}
-              <button className="inline-flex align-baseline justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg">
+              <button type="button" className="btn btn-primary">
                 {headerData.cta}
               </button>
             </nav>
