@@ -41,7 +41,7 @@ export const LogoTicker = () => {
                 key={index}
                 src={logo.src}
                 alt={logo.alt}
-                className="logo-ticker-image"
+                className="h-8 w-auto"
               />
             ))}
           </motion.div>
