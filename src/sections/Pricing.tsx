@@ -3,6 +3,7 @@ import { CheckIcon } from "@/src/assets";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { pricingTiers, pricingData } from "@/src/constants";
+import Card from "@/src/components/Card";
 
 export const Pricing = () => {
   return (
@@ -22,10 +23,9 @@ export const Pricing = () => {
               inverse,
               features,
             }) => (
-              <div
+              <Card
                 key={title}
                 className={twMerge(
-                  "card",
                   inverse === true && "border-black bg-black text-white",
                 )}
               >
@@ -84,7 +84,7 @@ export const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             ),
           )}
         </div>

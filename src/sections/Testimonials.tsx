@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { testimonials, testimonialsData } from "@/src/constants";
+import Card from "@/src/components/Card";
 
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
@@ -29,8 +30,8 @@ const TestimonialsColumn = (props: {
         {[...new Array(2)].fill(0).map((_, index) => (
           <React.Fragment key={index}>
             {props.testimonials.map(({ text, imageSrc, name, username }) => (
-              <div key={text} className="card">
-                <div>{text}</div>
+              <Card key={text}>
+                <p>{text}</p>
                 <div className="flex items-center gap-2 mt-5">
                   <Image
                     src={imageSrc}
@@ -46,7 +47,7 @@ const TestimonialsColumn = (props: {
                     <div className="leading-5 tracking-tight">{username}</div>
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </React.Fragment>
         ))}
