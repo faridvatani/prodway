@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative">
       <body
-        className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}
+        className={twMerge(dmSans.className, "antialiased bg-secondary")}
         suppressHydrationWarning
       >
         {children}

@@ -10,7 +10,7 @@ const Tag: FC<TagProps> = ({ content, className }) => {
   return (
     <span
       className={twMerge(
-        "inline-flex text-sm border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight",
+        "inline-flex text-sm border border-darkGray/10 px-3 py-1 rounded-lg tracking-tight",
         className,
       )}
     >

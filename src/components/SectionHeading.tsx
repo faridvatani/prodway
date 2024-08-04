@@ -32,7 +32,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       )}
       <h2
         className={twMerge(
-          "text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text",
+          "text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-primary text-transparent bg-clip-text",
           titleClassName,
         )}
       >
@@ -40,7 +40,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       </h2>
       <p
         className={twMerge(
-          "text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E]",
+          "text-center text-[22px] leading-[30px] tracking-tight text-darkBlue",
           descriptionClassName,
         )}
       >

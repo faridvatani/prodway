@@ -17,7 +17,7 @@ export const ProductShowcase = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-[#ffffff] to-[#D2DCFF] overflow-x-clip"
+      className="py-24 bg-gradient-to-b from-white to-lightBlue overflow-x-clip"
     >
       <div className="container">
         <SectionHeading

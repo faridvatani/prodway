@@ -26,10 +26,10 @@ export const Hero = () => {
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
             <Tag content={heroData.tag} />
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-gradient-to-b from-black to-primary text-transparent bg-clip-text mt-6">
               {heroData.title}
             </h1>
-            <p className="text-xl text-[#010D3E] tracking-tight mt-6">
+            <p className="text-xl text-darkBlue tracking-tight mt-6">
               {heroData.description}
             </p>
             <div className="flex items-center gap-1 mt-[30px]">

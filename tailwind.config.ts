@@ -8,6 +8,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      primary: "#001E80",
+      secondary: "#EAEEFE",
+      white: "#FFFFFF",
+      black: "#000000",
+      transparent: "transparent",
+      lightBlue: "#D2DCFF",
+      darkBlue: "#010D3E",
+      gray: "#BCBCBC",
+      lightGray: "#F1F1F1",
+      darkGray: "#222",
+    },
     screens: {
       sm: "375px",
       md: "768px",

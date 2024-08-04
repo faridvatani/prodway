@@ -12,7 +12,7 @@ const Card: FC<CardProps> = ({ children, className, role = "region" }) => {
     <div
       role={role}
       className={twMerge(
-        "p-10 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
+        "p-10 border border-lightGray rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
         className,
       )}
     >

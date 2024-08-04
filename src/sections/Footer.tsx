@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-[#BCBCBC] text-sm py-10 text-center">
+    <footer className="bg-black text-gray text-sm py-10 text-center">
       <div className="container">
         <div className="inline-flex relative">
           <motion.div

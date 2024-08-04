@@ -16,7 +16,7 @@ export const CallToAction = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-white to-lightBlue py-24 overflow-x-clip"
     >
       <div className="container">
         <SectionHeading
