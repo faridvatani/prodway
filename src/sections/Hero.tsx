@@ -8,6 +8,7 @@ import {
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { heroData } from "@/src/constants";
+import Tag from "@/src/components/Tag";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -24,9 +25,7 @@ export const Hero = () => {
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
-            <div className="inline-flex text-sm border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight">
-              {heroData.tag}
-            </div>
+            <Tag content={heroData.tag} />
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
               {heroData.title}
             </h1>

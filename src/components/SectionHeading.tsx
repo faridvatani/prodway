@@ -1,5 +1,6 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import Tag from "./Tag";
 
 interface SectionHeadingProps {
   title: string;
@@ -26,14 +27,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     <div className={twMerge("max-w-[540px] mx-auto", className)}>
       {tag && (
         <div className="flex justify-center">
-          <span
-            className={twMerge(
-              "inline-flex text-sm border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight",
-              tagClassName,
-            )}
-          >
-            {tag}
-          </span>
+          <Tag content={tag} className={tagClassName} />
         </div>
       )}
       <h2
