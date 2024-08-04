@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ProductImage, PyramidImage, TubeImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { productShowcaseData } from "@/src/constants";
+import { productShowcaseData } from "@/src/lib/constants";
 import SectionHeading from "@/src/components/SectionHeading";
 
 export const ProductShowcase = () => {

@@ -7,7 +7,7 @@ import {
 } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { heroData } from "@/src/constants";
+import { heroData } from "@/src/lib/constants";
 import Tag from "@/src/components/Tag";
 
 export const Hero = () => {

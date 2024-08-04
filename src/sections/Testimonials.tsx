@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { testimonials, testimonialsData } from "@/src/constants";
+import { testimonials, testimonialsData } from "@/src/lib/constants";
 import SectionHeading from "@/src/components/SectionHeading";
 import TestimonialsColumn from "@/src/components/TestimonialsColumn";
 

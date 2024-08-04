@@ -1,5 +1,5 @@
 import { ArrowRight } from "@/src/assets";
-import { bannerData } from "@/src/constants";
+import { bannerData } from "@/src/lib/constants";
 import Link from "next/link";
 
 export const Banner = () => {

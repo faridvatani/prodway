@@ -2,7 +2,7 @@
 import { ArrowRight, StarImage, SpringImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { callToActionData } from "@/src/constants";
+import { callToActionData } from "@/src/lib/constants";
 import Link from "next/link";
 import SectionHeading from "@/src/components/SectionHeading";
 

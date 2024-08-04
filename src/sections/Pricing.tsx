@@ -2,7 +2,7 @@
 import { CheckIcon } from "@/src/assets";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { pricingTiers, pricingData } from "@/src/constants";
+import { pricingTiers, pricingData } from "@/src/lib/constants";
 import Card from "@/src/components/Card";
 import SectionHeading from "@/src/components/SectionHeading";
 

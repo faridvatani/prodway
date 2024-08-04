@@ -9,7 +9,7 @@ import {
 } from "@/src/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { footerData } from "@/src/constants";
+import { footerData } from "@/src/lib/constants";
 import Link from "next/link";
 
 export const Footer = () => {

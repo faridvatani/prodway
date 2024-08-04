@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Banner } from "./Banner";
 import { Logo, Menu } from "@/src/assets";
 import Link from "next/link";
-import { headerData } from "@/src/constants";
+import { headerData } from "@/src/lib/constants";
 
 export const Header = () => {
   return (
@@ -15,7 +15,11 @@ export const Header = () => {
             <Menu className="w-5 h-5 md:hidden" />
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
               {headerData.headerLinks.map((link) => (
-                <Link href={link.href} key={link.name} className="hover:text-black">
+                <Link
+                  href={link.href}
+                  key={link.name}
+                  className="hover:text-black"
+                >
                   {link.name}
                 </Link>
               ))}
