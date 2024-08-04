@@ -4,15 +4,18 @@ import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { pricingTiers, pricingData } from "@/src/constants";
 import Card from "@/src/components/Card";
+import SectionHeading from "@/src/components/SectionHeading";
 
 export const Pricing = () => {
   return (
     <section className="py-24 bg-white">
       <div className="container">
-        <div className="section-heading">
-          <h2 className="section-title">{pricingData.title}</h2>
-          <p className="section-description mt-5">{pricingData.description}</p>
-        </div>
+        <SectionHeading
+          className="relative"
+          title={pricingData.title}
+          description={pricingData.description}
+          descriptionClassName="mt-5"
+        />
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center gap-6 items-center mt-10">
           {pricingTiers.map(
             ({

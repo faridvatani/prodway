@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { testimonials, testimonialsData } from "@/src/constants";
 import Card from "@/src/components/Card";
+import SectionHeading from "@/src/components/SectionHeading";
 
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
@@ -60,16 +61,13 @@ export const Testimonials = () => {
   return (
     <section className="bg-white">
       <div className="container">
-        <div className="section-heading">
-          <div className="flex justify-center">
-            <div className="tag">{testimonialsData.tag}</div>
-          </div>
-          <h2 className="section-title mt-5">{testimonialsData.title}</h2>
-          <p className="section-description mt-5">
-            {testimonialsData.description}
-          </p>
-        </div>
-
+        <SectionHeading
+          tag={testimonialsData.tag}
+          title={testimonialsData.title}
+          titleClassName="mt-5"
+          description={testimonialsData.description}
+          descriptionClassName="mt-5"
+        />
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn

@@ -4,6 +4,7 @@ import { ProductImage, PyramidImage, TubeImage } from "@/src/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { productShowcaseData } from "@/src/constants";
+import SectionHeading from "@/src/components/SectionHeading";
 
 export const ProductShowcase = () => {
   const sectionRef = useRef(null);
@@ -19,15 +20,14 @@ export const ProductShowcase = () => {
       className="py-24 bg-gradient-to-b from-[#ffffff] to-[#D2DCFF] overflow-x-clip"
     >
       <div className="container">
-        <div className="section-heading">
-          <div className="flex justify-center">
-            <div className="tag">{productShowcaseData.tag}</div>
-          </div>
-          <h2 className="section-title mt-5">{productShowcaseData.title}</h2>
-          <p className="section-description mt-5">
-            {productShowcaseData.description}
-          </p>
-        </div>
+        <SectionHeading
+          tag={productShowcaseData.tag}
+          title={productShowcaseData.title}
+          titleClassName="mt-5"
+          description={productShowcaseData.description}
+          descriptionClassName="mt-5"
+        />
+
         <div className="relative">
           <Image src={ProductImage} alt="Product Image" className="mt-10" />
           <motion.img

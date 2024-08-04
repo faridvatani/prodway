@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { callToActionData } from "@/src/constants";
 import Link from "next/link";
+import SectionHeading from "@/src/components/SectionHeading";
 
 export const CallToAction = () => {
   const sectionRef = useRef(null);
@@ -18,11 +19,11 @@ export const CallToAction = () => {
       className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip"
     >
       <div className="container">
-        <div className="section-heading relative">
-          <h2 className="section-title">{callToActionData.title}</h2>
-          <p className="section-description mt-5">
-            {callToActionData.description}
-          </p>
+        <SectionHeading
+          className="relative"
+          title={callToActionData.title}
+          description={callToActionData.description}
+        >
           <motion.img
             src={StarImage.src}
             alt="Star Image"
@@ -41,7 +42,7 @@ export const CallToAction = () => {
               translateY,
             }}
           />
-        </div>
+        </SectionHeading>
         <div className="flex gap-2 mt-10 justify-center">
           <Link
             href={callToActionData.primaryButton.href}
