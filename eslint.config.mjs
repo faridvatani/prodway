@@ -4,6 +4,7 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 const sourceFiles = ["**/*.{js,jsx,ts,tsx}"];
 
 const eslintConfig = [
+  { ignores: [".next/**", "coverage/**", "node_modules/**", "out/**"] },
   { ...js.configs.recommended, files: sourceFiles },
   ...nextVitals,
   {
@@ -17,6 +18,7 @@ const eslintConfig = [
       "no-empty": "error",
       "no-undef": "warn",
       "no-var": "error",
+      "react/no-array-index-key": "error",
       eqeqeq: ["error", "always"],
       curly: "error",
       strict: ["error", "global"],

@@ -74,10 +74,14 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Check formatting
+        run: ${{ steps.detect-package-manager.outputs.runner }} format:check
       - name: Lint
         run: ${{ steps.detect-package-manager.outputs.runner }} lint
       - name: Type check
         run: ${{ steps.detect-package-manager.outputs.runner }} typecheck
+      - name: Test with coverage
+        run: ${{ steps.detect-package-manager.outputs.runner }} test:coverage
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
