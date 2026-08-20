@@ -4,8 +4,8 @@
 
 Prodway is a modern, light SaaS landing page designed using React, Next.js, TailwindCSS, and Framer Motion. This project aims to provide a fast, responsive, and SEO-optimized landing page that is easy to customize and built with the latest web technologies. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-
 ## Features
+
 - **Fast and Responsive**: Optimized for performance and mobile-friendly design.
 - **SEO Optimized**: Built with best practices to ensure high search engine rankings.
 - **Easy to Customize**: Modular and well-documented codebase for easy customization.
@@ -49,7 +49,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load DM_Sans, a custom Google Font.
 
-
 ## Design
 
 You can view the design for this project on Figma: [Light SaaS Landing Page](https://www.figma.com/design/QVurC59vEGp58v3RGPK0S4/Light-SaaS-Landing-Page?node-id=0-1&t=MNqnEiakPaFbjw28-1)
@@ -61,4 +60,3 @@ Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTIN
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-

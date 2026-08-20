@@ -44,7 +44,7 @@ export const Pricing = () => {
                   {popular === true && (
                     <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">
                       <motion.span
-                        className="pricing-popular-label text-transparent bg-clip-text font-medium"
+                        className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDf,#E1CD86,#BBCB92,#71C2EF,#3BFFFF)] bg-size-[200%] text-transparent bg-clip-text font-medium"
                         animate={{
                           backgroundPositionX: "-100%",
                         }}

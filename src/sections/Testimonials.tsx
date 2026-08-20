@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { testimonials, testimonialsData } from "@/src/lib/constants";
 import SectionHeading from "@/src/components/SectionHeading";
 import TestimonialsColumn from "@/src/components/TestimonialsColumn";
@@ -20,7 +19,7 @@ export const Testimonials = () => {
           description={testimonialsData.description}
           descriptionClassName="mt-5"
         />
-        <div className="testimonials-mask flex justify-center gap-6 mt-10 overflow-hidden">
+        <div className="flex justify-center gap-6 mt-10 mask-[linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-184.5 overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

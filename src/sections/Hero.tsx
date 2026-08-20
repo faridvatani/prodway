@@ -20,13 +20,13 @@ export const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="hero-background pt-8 pb-20 md:pt-5 md:pb-10 overflow-x-clip"
+      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip"
     >
       <div className="container">
         <div className="md:flex items-center">
-          <div className="hero-copy">
+          <div className="md:w-119.5">
             <Tag content={heroData.tag} />
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-linear-to-b from-black to-primary text-transparent bg-clip-text mt-6">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text mt-6">
               {heroData.title}
             </h1>
             <p className="text-xl text-dark-blue tracking-tight mt-6">
@@ -42,7 +42,7 @@ export const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="hero-art mt-20 md:mt-0 md:flex-1 relative">
+          <div className="mt-20 md:mt-0 md:h-162 md:flex-1 relative">
             <motion.img
               src={CogImage.src}
               alt="Cog Image"
@@ -69,7 +69,7 @@ export const Hero = () => {
               src={NoodleImage.src}
               alt="Noodle Image"
               width={220}
-              className="hero-noodle hidden lg:block absolute"
+              className="hidden lg:block absolute top-131 left-122"
               style={{
                 rotate: 30,
                 translateY,

@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment, type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import Card from "@/src/components/Card";
@@ -16,7 +16,9 @@ interface TestimonialsColumnProps {
   duration?: number;
 }
 
-const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
+const testimonialCopies = ["first", "second"] as const;
+
+const TestimonialsColumn: FC<TestimonialsColumnProps> = ({
   testimonials,
   className,
   duration = 10,
@@ -33,8 +35,8 @@ const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
           ease: "linear",
         }}
       >
-        {[...new Array(2)].fill(0).map((_, index) => (
-          <React.Fragment key={index}>
+        {testimonialCopies.map((copy) => (
+          <Fragment key={copy}>
             {testimonials.map(({ text, imageSrc, name, username }) => (
               <Card key={text}>
                 <p>{text}</p>
@@ -55,7 +57,7 @@ const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
                 </div>
               </Card>
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
       </motion.div>
     </div>

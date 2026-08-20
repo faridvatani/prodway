@@ -1,8 +1,8 @@
-import React, { type FC } from "react";
+import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface TagProps {
-  content: React.ReactNode;
+  content: ReactNode;
   className?: string;
 }
 
