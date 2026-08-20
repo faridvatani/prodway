@@ -1,10 +1,10 @@
 import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface TagProps {
+type TagProps = {
   content: ReactNode;
   className?: string;
-}
+};
 
 const Tag: FC<TagProps> = ({ content, className }) => {
   return (

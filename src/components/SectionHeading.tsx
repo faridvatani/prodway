@@ -2,7 +2,8 @@ import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import Tag from "./Tag";
 
-interface SectionHeadingProps {
+type SectionHeadingProps = {
+  id?: string;
   title: string;
   description: string;
   tag?: string;
@@ -11,10 +12,10 @@ interface SectionHeadingProps {
   titleClassName?: string;
   descriptionClassName?: string;
   children?: ReactNode;
-  id?: string;
-}
+};
 
 const SectionHeading: FC<SectionHeadingProps> = ({
+  id,
   tag,
   title,
   description,
@@ -23,7 +24,6 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   titleClassName,
   descriptionClassName,
   children,
-  id,
 }) => {
   return (
     <div className={twMerge("max-w-135 mx-auto", className)}>

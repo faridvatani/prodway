@@ -3,18 +3,18 @@ import Image, { type StaticImageData } from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import Card from "@/src/components/Card";
 
-interface Testimonial {
+type Testimonial = {
   text: string;
   imageSrc: StaticImageData;
   name: string;
   username: string;
-}
+};
 
-interface TestimonialsColumnProps {
+type TestimonialsColumnProps = {
   testimonials: Testimonial[];
   className?: string;
   duration?: number;
-}
+};
 
 const testimonialCopies = ["first", "second"] as const;
 

@@ -1,11 +1,11 @@
 import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface CardProps {
+type CardProps = {
   children: ReactNode;
   className?: string;
   ariaHidden?: boolean;
-}
+};
 
 const Card: FC<CardProps> = ({ children, className, ariaHidden }) => {
   return (

@@ -10,21 +10,8 @@ import {
   Avatar9,
 } from "@/src/assets";
 
-import type {
-  BannerData,
-  CallToActionData,
-  FooterData,
-  HeaderData,
-  HeroData,
-  PricingData,
-  PricingTier,
-  ProductShowcaseData,
-  Testimonial,
-  TestimonialsData,
-} from "@/src/types/types";
-
 // Static data
-export const bannerData: BannerData = {
+export const bannerData = {
   title: "Streamline your workflow and boost your productivity",
   link: {
     name: "Get started for free",
@@ -32,7 +19,7 @@ export const bannerData: BannerData = {
   },
 };
 
-export const headerData: HeaderData = {
+export const headerData = {
   headerLinks: [
     { name: "About", href: "#" },
     { name: "Features", href: "#" },
@@ -43,7 +30,7 @@ export const headerData: HeaderData = {
   cta: "Get for free",
 };
 
-export const heroData: HeroData = {
+export const heroData = {
   tag: "Version 2.0 is here",
   title: "Pathway to productivity",
   description:
@@ -52,14 +39,14 @@ export const heroData: HeroData = {
   secondaryButton: "Learn more",
 };
 
-export const productShowcaseData: ProductShowcaseData = {
+export const productShowcaseData = {
   tag: "Boost your productivity",
   title: "A more effective way to track progress",
   description:
     "Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.",
 };
 
-export const pricingData: PricingData = {
+export const pricingData = {
   title: "Pricing",
   description:
     "Free forever. Upgrade for unlimited tasks, better security, and exclusive features.",
@@ -67,14 +54,14 @@ export const pricingData: PricingData = {
   billingPeriod: "/month",
 };
 
-export const testimonialsData: TestimonialsData = {
+export const testimonialsData = {
   tag: "Testimonials",
   title: "What our users say",
   description:
     "From intuitive design to powerful features, our app has become an essential tool for users around the world.",
 };
 
-export const callToActionData: CallToActionData = {
+export const callToActionData = {
   title: "Sign up for free today",
   description:
     "Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.",
@@ -82,7 +69,7 @@ export const callToActionData: CallToActionData = {
   secondaryButton: { name: "Learn more", href: "#" },
 };
 
-export const footerData: FooterData = {
+export const footerData = {
   footerLinks: [
     { name: "About", href: "#" },
     { name: "Features", href: "#" },
@@ -94,7 +81,7 @@ export const footerData: FooterData = {
 };
 
 // Pricing tier data
-export const pricingTiers: PricingTier[] = [
+export const pricingTiers = [
   {
     title: "Free",
     monthlyPrice: 0,
@@ -147,7 +134,7 @@ export const pricingTiers: PricingTier[] = [
 ];
 
 // Testimonial data
-export const testimonials: Testimonial[] = [
+export const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
     imageSrc: Avatar1,
