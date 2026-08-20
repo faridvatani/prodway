@@ -1,8 +1,9 @@
-import React from "react";
+import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import Tag from "./Tag";
 
-interface SectionHeadingProps {
+type SectionHeadingProps = {
+  id?: string;
   title: string;
   description: string;
   tag?: string;
@@ -10,10 +11,11 @@ interface SectionHeadingProps {
   tagClassName?: string;
   titleClassName?: string;
   descriptionClassName?: string;
-  children?: React.ReactNode;
-}
+  children?: ReactNode;
+};
 
-const SectionHeading: React.FC<SectionHeadingProps> = ({
+const SectionHeading: FC<SectionHeadingProps> = ({
+  id,
   tag,
   title,
   description,
@@ -24,15 +26,16 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   children,
 }) => {
   return (
-    <div className={twMerge("max-w-[540px] mx-auto", className)}>
+    <div className={twMerge("max-w-135 mx-auto", className)}>
       {tag && (
         <div className="flex justify-center">
           <Tag content={tag} className={tagClassName} />
         </div>
       )}
       <h2
+        id={id}
         className={twMerge(
-          "text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-primary text-transparent bg-clip-text",
+          "scroll-mt-36 text-center text-3xl md:text-[54px] md:leading-15 font-bold tracking-tighter bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text",
           titleClassName,
         )}
       >
@@ -40,7 +43,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       </h2>
       <p
         className={twMerge(
-          "text-center text-[22px] leading-[30px] tracking-tight text-darkBlue",
+          "text-center text-[22px] leading-7.5 tracking-tight text-dark-blue",
           descriptionClassName,
         )}
       >

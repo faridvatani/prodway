@@ -1,31 +1,35 @@
-import React from "react";
-import Image, { StaticImageData } from "next/image";
-import { motion } from "framer-motion";
+import { Fragment, type FC } from "react";
+import Image, { type StaticImageData } from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import Card from "@/src/components/Card";
 
-interface Testimonial {
+type Testimonial = {
   text: string;
   imageSrc: StaticImageData;
   name: string;
   username: string;
-}
+};
 
-interface TestimonialsColumnProps {
+type TestimonialsColumnProps = {
   testimonials: Testimonial[];
   className?: string;
   duration?: number;
-}
+};
 
-const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
+const testimonialCopies = ["first", "second"] as const;
+
+const TestimonialsColumn: FC<TestimonialsColumnProps> = ({
   testimonials,
   className,
   duration = 10,
 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className={className}>
       <motion.div
         className="flex flex-col gap-6 pb-6"
-        animate={{ translateY: "-50%" }}
+        animate={shouldReduceMotion ? undefined : { translateY: "-50%" }}
         transition={{
           duration,
           repeat: Infinity,
@@ -33,10 +37,10 @@ const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
           ease: "linear",
         }}
       >
-        {[...new Array(2)].fill(0).map((_, index) => (
-          <React.Fragment key={index}>
+        {testimonialCopies.map((copy) => (
+          <Fragment key={copy}>
             {testimonials.map(({ text, imageSrc, name, username }) => (
-              <Card key={text}>
+              <Card key={text} ariaHidden={copy === "second"}>
                 <p>{text}</p>
                 <div className="flex items-center gap-2 mt-5">
                   <Image
@@ -55,7 +59,7 @@ const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({
                 </div>
               </Card>
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
       </motion.div>
     </div>

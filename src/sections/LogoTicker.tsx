@@ -8,7 +8,7 @@ import {
   PulseLogo,
   QuantumLogo,
 } from "@/src/assets";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const logos = [
   { src: AcmeLogo, alt: "Acme Logo" },
@@ -19,16 +19,21 @@ const logos = [
   { src: ApexLogo, alt: "Apex Logo" },
 ];
 
+const scrollingLogos = [
+  ...logos.map((logo) => ({ ...logo, key: `${logo.alt}-first` })),
+  ...logos.map((logo) => ({ ...logo, key: `${logo.alt}-second` })),
+];
+
 export const LogoTicker = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section aria-label="Trusted companies" className="py-8 md:py-12 bg-white">
       <div className="container">
-        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
+        <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black,transparent)]">
           <motion.div
             className="flex gap-14 flex-none pr-14"
-            animate={{
-              translateX: "-50%",
-            }}
+            animate={shouldReduceMotion ? undefined : { translateX: "-50%" }}
             transition={{
               repeat: Infinity,
               repeatType: "loop",
@@ -36,11 +41,12 @@ export const LogoTicker = () => {
               ease: "linear",
             }}
           >
-            {logos.concat(logos).map((logo, index) => (
+            {scrollingLogos.map((logo, index) => (
               <Image
-                key={index}
+                key={logo.key}
                 src={logo.src}
-                alt={logo.alt}
+                alt={index < logos.length ? logo.alt : ""}
+                aria-hidden={index >= logos.length ? "true" : undefined}
                 className="h-8 w-auto"
               />
             ))}

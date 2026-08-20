@@ -8,20 +8,21 @@ import {
   SocialYoutube,
 } from "@/src/assets";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { footerData } from "@/src/lib/constants";
 import Link from "next/link";
 
 export const Footer = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <footer className="bg-black text-gray text-sm py-10 text-center">
       <div className="container">
         <div className="inline-flex relative">
           <motion.div
             className="absolute inset-0 blur-md rounded-full"
-            animate={{
-              rotate: 360,
-            }}
+            aria-hidden="true"
+            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -42,19 +43,41 @@ export const Footer = () => {
           />
         </div>
 
-        <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          {footerData.footerLinks.map((link, index) => (
-            <Link key={index} href={link.href} className="hover:text-white">
+        <nav
+          aria-label="Footer navigation"
+          className="flex flex-col md:flex-row md:justify-center gap-6 mt-6"
+        >
+          {footerData.footerLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="hover:text-white touch-manipulation focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-3"
+            >
               {link.name}
             </Link>
           ))}
         </nav>
         <div className="flex justify-center gap-6 mt-6">
-          <SocialX className="hover:text-white cursor-pointer" />
-          <SocialInstagram className="hover:text-white cursor-pointer" />
-          <SocialLinkedIn className="hover:text-white cursor-pointer" />
-          <SocialPinterest className="hover:text-white cursor-pointer" />
-          <SocialYoutube className="hover:text-white cursor-pointer" />
+          <SocialX
+            aria-hidden="true"
+            className="hover:text-white cursor-pointer"
+          />
+          <SocialInstagram
+            aria-hidden="true"
+            className="hover:text-white cursor-pointer"
+          />
+          <SocialLinkedIn
+            aria-hidden="true"
+            className="hover:text-white cursor-pointer"
+          />
+          <SocialPinterest
+            aria-hidden="true"
+            className="hover:text-white cursor-pointer"
+          />
+          <SocialYoutube
+            aria-hidden="true"
+            className="hover:text-white cursor-pointer"
+          />
         </div>
         <p className="mt-6">&copy;{footerData.copyRight}</p>
       </div>

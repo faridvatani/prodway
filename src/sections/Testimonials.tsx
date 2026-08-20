@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { testimonials, testimonialsData } from "@/src/lib/constants";
 import SectionHeading from "@/src/components/SectionHeading";
 import TestimonialsColumn from "@/src/components/TestimonialsColumn";
@@ -11,16 +10,17 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export const Testimonials = () => {
   return (
-    <section className="bg-white">
+    <section aria-labelledby="testimonials-heading" className="bg-white">
       <div className="container">
         <SectionHeading
           tag={testimonialsData.tag}
+          id="testimonials-heading"
           title={testimonialsData.title}
           titleClassName="mt-5"
           description={testimonialsData.description}
           descriptionClassName="mt-5"
         />
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+        <div className="flex justify-center gap-6 mt-10 mask-[linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-184.5 overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

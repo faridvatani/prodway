@@ -1,17 +1,20 @@
 "use client";
 import { CheckIcon } from "@/src/assets";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { pricingTiers, pricingData } from "@/src/lib/constants";
 import Card from "@/src/components/Card";
 import SectionHeading from "@/src/components/SectionHeading";
 
 export const Pricing = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="py-24 bg-white">
+    <section aria-labelledby="pricing-heading" className="py-24 bg-white">
       <div className="container">
         <SectionHeading
           className="relative"
+          id="pricing-heading"
           title={pricingData.title}
           description={pricingData.description}
           descriptionClassName="mt-5"
@@ -44,10 +47,12 @@ export const Pricing = () => {
                   {popular === true && (
                     <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">
                       <motion.span
-                        className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDf,#E1CD86,#BBCB92,#71C2EF,#3BFFFF)] [background-size:200%] text-transparent bg-clip-text font-medium"
-                        animate={{
-                          backgroundPositionX: "-100%",
-                        }}
+                        className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDf,#E1CD86,#BBCB92,#71C2EF,#3BFFFF)] bg-size-[200%] text-transparent bg-clip-text font-medium"
+                        animate={
+                          shouldReduceMotion
+                            ? undefined
+                            : { backgroundPositionX: "-100%" }
+                        }
                         transition={{
                           duration: 1,
                           repeat: Infinity,
@@ -60,7 +65,7 @@ export const Pricing = () => {
                     </div>
                   )}
                 </div>
-                <div className="flex items-baseline gap-1 mt-[30px]">
+                <div className="flex items-baseline gap-1 mt-7.5">
                   <span className="text-4xl font-bold tracking-tighter leading-none">
                     {pricingData.currency + monthlyPrice}
                   </span>
@@ -70,7 +75,7 @@ export const Pricing = () => {
                 </div>
                 <button
                   className={twMerge(
-                    "btn btn-primary w-full mt-[30px]",
+                    "btn btn-primary w-full mt-7.5",
                     inverse === true && "bg-white text-black hover:bg-white/80",
                   )}
                 >
@@ -82,7 +87,7 @@ export const Pricing = () => {
                       key={feature}
                       className="text-sm flex items-center gap-4"
                     >
-                      <CheckIcon className="w-6 h-6" />
+                      <CheckIcon aria-hidden="true" className="w-6 h-6" />
                       <span>{feature}</span>
                     </li>
                   ))}

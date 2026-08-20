@@ -1,16 +1,16 @@
-import React, { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface TagProps {
-  content: React.ReactNode;
+type TagProps = {
+  content: ReactNode;
   className?: string;
-}
+};
 
 const Tag: FC<TagProps> = ({ content, className }) => {
   return (
     <span
       className={twMerge(
-        "inline-flex text-sm border border-darkGray/10 px-3 py-1 rounded-lg tracking-tight",
+        "inline-flex text-sm border border-dark-gray/10 px-3 py-1 rounded-lg tracking-tight",
         className,
       )}
     >

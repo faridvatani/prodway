@@ -1,10 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #001e80;
+  --color-secondary: #eaeefe;
+  --color-light-blue: #d2dcff;
+  --color-dark-blue: #010d3e;
+  --color-gray: #bcbcbc;
+  --color-light-gray: #f1f1f1;
+  --color-dark-gray: #222;
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 23.4375rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 75rem;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @variant lg {
+    padding-inline: 5rem;
+  }
+}
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg;
+    @apply inline-flex items-center justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg cursor-pointer touch-manipulation focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-3;
   }
 
   .btn-primary {

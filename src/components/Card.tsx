@@ -1,18 +1,18 @@
-import React, { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface CardProps {
-  children: React.ReactNode;
+type CardProps = {
+  children: ReactNode;
   className?: string;
-  role?: string; // Optional role for accessibility
-}
+  ariaHidden?: boolean;
+};
 
-const Card: FC<CardProps> = ({ children, className, role = "region" }) => {
+const Card: FC<CardProps> = ({ children, className, ariaHidden }) => {
   return (
     <div
-      role={role}
+      aria-hidden={ariaHidden || undefined}
       className={twMerge(
-        "p-10 border border-lightGray rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
+        "p-10 border border-light-gray rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
         className,
       )}
     >
