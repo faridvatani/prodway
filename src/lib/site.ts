@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Prodway",
-  title: "Prodway | Productivity & Progress Tracking",
+  title: "Prodway | Light Saas Landing Page",
   description:
     "Track progress, stay motivated, and celebrate every milestone with Prodway, the productivity app built to keep work moving forward.",
   url: new URL("https://faridvatani.github.io/prodway/"),
