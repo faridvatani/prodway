@@ -19,6 +19,11 @@ const logos = [
   { src: ApexLogo, alt: "Apex Logo" },
 ];
 
+const scrollingLogos = [
+  ...logos.map((logo) => ({ ...logo, key: `${logo.alt}-first` })),
+  ...logos.map((logo) => ({ ...logo, key: `${logo.alt}-second` })),
+];
+
 export const LogoTicker = () => {
   return (
     <section className="py-8 md:py-12 bg-white">
@@ -36,9 +41,9 @@ export const LogoTicker = () => {
               ease: "linear",
             }}
           >
-            {logos.concat(logos).map((logo, index) => (
+            {scrollingLogos.map((logo) => (
               <Image
-                key={index}
+                key={logo.key}
                 src={logo.src}
                 alt={logo.alt}
                 className="h-8 w-auto"

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "sharp": "^0.35.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.2.0",
@@ -26,6 +28,7 @@
     "eslint": "^9.0.0",
     "eslint-config-next": "16.3.1",
     "postcss": "^8",
+    "prettier": "^3.6.2",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"

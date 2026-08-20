@@ -43,8 +43,8 @@ export const Footer = () => {
         </div>
 
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          {footerData.footerLinks.map((link, index) => (
-            <Link key={index} href={link.href} className="hover:text-white">
+          {footerData.footerLinks.map((link) => (
+            <Link key={link.name} href={link.href} className="hover:text-white">
               {link.name}
             </Link>
           ))}

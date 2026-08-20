@@ -10,7 +10,7 @@ import {
   Avatar9,
 } from "@/src/assets";
 
-import {
+import type {
   BannerData,
   CallToActionData,
   FooterData,
