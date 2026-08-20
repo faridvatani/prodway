@@ -20,7 +20,7 @@ export const Testimonials = () => {
           description={testimonialsData.description}
           descriptionClassName="mt-5"
         />
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+        <div className="testimonials-mask flex justify-center gap-6 mt-10 overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

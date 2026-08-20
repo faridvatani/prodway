@@ -44,7 +44,7 @@ export const Pricing = () => {
                   {popular === true && (
                     <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">
                       <motion.span
-                        className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDf,#E1CD86,#BBCB92,#71C2EF,#3BFFFF)] [background-size:200%] text-transparent bg-clip-text font-medium"
+                        className="pricing-popular-label text-transparent bg-clip-text font-medium"
                         animate={{
                           backgroundPositionX: "-100%",
                         }}
@@ -60,7 +60,7 @@ export const Pricing = () => {
                     </div>
                   )}
                 </div>
-                <div className="flex items-baseline gap-1 mt-[30px]">
+                <div className="flex items-baseline gap-1 mt-7.5">
                   <span className="text-4xl font-bold tracking-tighter leading-none">
                     {pricingData.currency + monthlyPrice}
                   </span>
@@ -70,7 +70,7 @@ export const Pricing = () => {
                 </div>
                 <button
                   className={twMerge(
-                    "btn btn-primary w-full mt-[30px]",
+                    "btn btn-primary w-full mt-7.5",
                     inverse === true && "bg-white text-black hover:bg-white/80",
                   )}
                 >

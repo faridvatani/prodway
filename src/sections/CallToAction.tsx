@@ -16,7 +16,7 @@ export const CallToAction = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-lightBlue py-24 overflow-x-clip"
+      className="bg-linear-to-b from-white to-light-blue py-24 overflow-x-clip"
     >
       <div className="container">
         <SectionHeading
@@ -28,7 +28,7 @@ export const CallToAction = () => {
             src={StarImage.src}
             alt="Star Image"
             width={360}
-            className="absolute -left-[350px] -top-[137px]"
+            className="cta-star absolute"
             style={{
               translateY,
             }}
@@ -37,7 +37,7 @@ export const CallToAction = () => {
             src={SpringImage.src}
             alt="Spring Image"
             width={360}
-            className="absolute -right-[331px] -top-[19px]"
+            className="cta-spring absolute"
             style={{
               translateY,
             }}

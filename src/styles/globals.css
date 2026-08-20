@@ -1,8 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #001e80;
+  --color-secondary: #eaeefe;
+  --color-light-blue: #d2dcff;
+  --color-dark-blue: #010d3e;
+  --color-gray: #bcbcbc;
+  --color-light-gray: #f1f1f1;
+  --color-dark-gray: #222;
+
+  --breakpoint-sm: 23.4375rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 75rem;
+}
 
 @layer components {
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
   .btn {
     @apply inline-flex items-center justify-center font-medium tracking-tight bg-black text-white px-4 py-2 rounded-lg;
   }
@@ -13,5 +31,95 @@
 
   .btn-text {
     @apply text-black bg-transparent;
+  }
+
+  .card-shadow {
+    box-shadow: 0 7px 14px #eaeaea;
+  }
+
+  .section-heading {
+    max-width: 33.75rem;
+  }
+
+  .section-heading-description {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+  }
+
+  .hero-background {
+    background-image: radial-gradient(
+      ellipse 200% 100% at bottom left,
+      #183ec2,
+      #eaeefe 100%
+    );
+  }
+
+  .logo-ticker-mask {
+    mask-image: linear-gradient(to right, transparent, black, transparent);
+  }
+
+  .testimonials-mask {
+    max-height: 46.125rem;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
+  }
+
+  .pricing-popular-label {
+    background-image: linear-gradient(
+      to right,
+      #dd7ddf,
+      #e1cd86,
+      #bbcb92,
+      #71c2ef,
+      #3bffff,
+      #dd7ddf,
+      #e1cd86,
+      #bbcb92,
+      #71c2ef,
+      #3bffff
+    );
+    background-size: 200%;
+  }
+
+  .cta-star {
+    left: -21.875rem;
+    top: -8.5625rem;
+  }
+
+  .cta-spring {
+    right: -20.6875rem;
+    top: -1.1875rem;
+  }
+
+  @media (width >= 48rem) {
+    .section-heading-title {
+      font-size: 3.375rem;
+      line-height: 3.75rem;
+    }
+
+    .hero-copy {
+      width: 29.875rem;
+    }
+
+    .hero-art {
+      height: 40.5rem;
+    }
+  }
+
+  @media (width >= 75rem) {
+    .container {
+      padding-inline: 5rem;
+    }
+
+    .hero-noodle {
+      top: 32.75rem;
+      left: 30.5rem;
+      rotate: 30deg;
+    }
   }
 }

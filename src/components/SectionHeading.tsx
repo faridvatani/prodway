@@ -24,7 +24,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   children,
 }) => {
   return (
-    <div className={twMerge("max-w-[540px] mx-auto", className)}>
+    <div className={twMerge("section-heading mx-auto", className)}>
       {tag && (
         <div className="flex justify-center">
           <Tag content={tag} className={tagClassName} />
@@ -32,7 +32,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       )}
       <h2
         className={twMerge(
-          "text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-primary text-transparent bg-clip-text",
+          "section-heading-title text-center text-3xl font-bold tracking-tighter bg-linear-to-b from-black to-primary text-transparent bg-clip-text",
           titleClassName,
         )}
       >
@@ -40,7 +40,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       </h2>
       <p
         className={twMerge(
-          "text-center text-[22px] leading-[30px] tracking-tight text-darkBlue",
+          "section-heading-description text-center tracking-tight text-dark-blue",
           descriptionClassName,
         )}
       >
