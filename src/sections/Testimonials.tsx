@@ -10,10 +10,11 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export const Testimonials = () => {
   return (
-    <section className="bg-white">
+    <section aria-labelledby="testimonials-heading" className="bg-white">
       <div className="container">
         <SectionHeading
           tag={testimonialsData.tag}
+          id="testimonials-heading"
           title={testimonialsData.title}
           titleClassName="mt-5"
           description={testimonialsData.description}

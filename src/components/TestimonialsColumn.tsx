@@ -1,6 +1,6 @@
 import { Fragment, type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Card from "@/src/components/Card";
 
 interface Testimonial {
@@ -23,11 +23,13 @@ const TestimonialsColumn: FC<TestimonialsColumnProps> = ({
   className,
   duration = 10,
 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className={className}>
       <motion.div
         className="flex flex-col gap-6 pb-6"
-        animate={{ translateY: "-50%" }}
+        animate={shouldReduceMotion ? undefined : { translateY: "-50%" }}
         transition={{
           duration,
           repeat: Infinity,
@@ -38,7 +40,7 @@ const TestimonialsColumn: FC<TestimonialsColumnProps> = ({
         {testimonialCopies.map((copy) => (
           <Fragment key={copy}>
             {testimonials.map(({ text, imageSrc, name, username }) => (
-              <Card key={text}>
+              <Card key={text} ariaHidden={copy === "second"}>
                 <p>{text}</p>
                 <div className="flex items-center gap-2 mt-5">
                   <Image

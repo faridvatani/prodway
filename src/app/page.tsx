@@ -9,15 +9,17 @@ import { Footer } from "@/src/sections/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <LogoTicker />
-      <ProductShowcase />
-      <Pricing />
-      <Testimonials />
-      <CallToAction />
+      <main id="main-content">
+        <Hero />
+        <LogoTicker />
+        <ProductShowcase />
+        <Pricing />
+        <Testimonials />
+        <CallToAction />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

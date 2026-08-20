@@ -5,7 +5,12 @@ import {
   CylinderImage,
   NoodleImage,
 } from "@/src/assets";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import { heroData } from "@/src/lib/constants";
 import Tag from "@/src/components/Tag";
@@ -17,16 +22,21 @@ export const Hero = () => {
     offset: ["start end", "end start"],
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const shouldReduceMotion = useReducedMotion();
   return (
     <section
       ref={heroRef}
+      aria-labelledby="hero-heading"
       className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip"
     >
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-119.5">
             <Tag content={heroData.tag} />
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text mt-6">
+            <h1
+              id="hero-heading"
+              className="scroll-mt-36 text-5xl md:text-7xl font-bold tracking-tighter md:leading-tight bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text mt-6"
+            >
               {heroData.title}
             </h1>
             <p className="text-xl text-dark-blue tracking-tight mt-6">
@@ -38,7 +48,7 @@ export const Hero = () => {
               </button>
               <button type="button" className="btn btn-text gap-1">
                 <span>{heroData.secondaryButton}</span>
-                <Icon className="h-5 w-5" />
+                <Icon aria-hidden="true" className="h-5 w-5" />
               </button>
             </div>
           </div>
@@ -46,8 +56,11 @@ export const Hero = () => {
             <motion.img
               src={CogImage.src}
               alt="Cog Image"
+              aria-hidden="true"
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
-              animate={{ translateY: [-30, 30] }}
+              animate={
+                shouldReduceMotion ? undefined : { translateY: [-30, 30] }
+              }
               transition={{
                 repeat: Infinity,
                 repeatType: "mirror",
@@ -58,21 +71,23 @@ export const Hero = () => {
             <motion.img
               src={CylinderImage.src}
               alt="Cylinder Image"
+              aria-hidden="true"
               width={220}
               height={220}
               className="hidden md:block -top-8 -left-32 md:absolute"
               style={{
-                translateY,
+                translateY: shouldReduceMotion ? 0 : translateY,
               }}
             />
             <motion.img
               src={NoodleImage.src}
               alt="Noodle Image"
+              aria-hidden="true"
               width={220}
               className="hidden lg:block absolute top-131 left-122"
               style={{
                 rotate: 30,
-                translateY,
+                translateY: shouldReduceMotion ? 0 : translateY,
               }}
             />
           </div>

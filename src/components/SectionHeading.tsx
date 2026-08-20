@@ -11,6 +11,7 @@ interface SectionHeadingProps {
   titleClassName?: string;
   descriptionClassName?: string;
   children?: ReactNode;
+  id?: string;
 }
 
 const SectionHeading: FC<SectionHeadingProps> = ({
@@ -22,6 +23,7 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   titleClassName,
   descriptionClassName,
   children,
+  id,
 }) => {
   return (
     <div className={twMerge("max-w-135 mx-auto", className)}>
@@ -31,8 +33,9 @@ const SectionHeading: FC<SectionHeadingProps> = ({
         </div>
       )}
       <h2
+        id={id}
         className={twMerge(
-          "text-center text-3xl md:text-[54px] md:leading-15 font-bold tracking-tighter bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text",
+          "scroll-mt-36 text-center text-3xl md:text-[54px] md:leading-15 font-bold tracking-tighter bg-linear-to-b/srgb from-black to-primary text-transparent bg-clip-text",
           titleClassName,
         )}
       >

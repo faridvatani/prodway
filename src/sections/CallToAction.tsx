@@ -1,6 +1,11 @@
 "use client";
 import { ArrowRight, StarImage, SpringImage } from "@/src/assets";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import { callToActionData } from "@/src/lib/constants";
 import Link from "next/link";
@@ -13,33 +18,38 @@ export const CallToAction = () => {
     offset: ["start end", "end start"],
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const shouldReduceMotion = useReducedMotion();
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="cta-heading"
       className="bg-linear-to-b/srgb from-white to-light-blue py-24 overflow-x-clip"
     >
       <div className="container">
         <SectionHeading
           className="relative"
+          id="cta-heading"
           title={callToActionData.title}
           description={callToActionData.description}
         >
           <motion.img
             src={StarImage.src}
-            alt="Star Image"
+            alt=""
+            aria-hidden="true"
             width={360}
             className="absolute -left-87.5 -top-34.25"
             style={{
-              translateY,
+              translateY: shouldReduceMotion ? 0 : translateY,
             }}
           />
           <motion.img
             src={SpringImage.src}
-            alt="Spring Image"
+            alt=""
+            aria-hidden="true"
             width={360}
             className="absolute -right-82.75 -top-4.75"
             style={{
-              translateY,
+              translateY: shouldReduceMotion ? 0 : translateY,
             }}
           />
         </SectionHeading>
@@ -55,7 +65,7 @@ export const CallToAction = () => {
             className="btn btn-text gap-1"
           >
             <span>{callToActionData.secondaryButton.name}</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight aria-hidden="true" className="w-5 h-5" />
           </Link>
         </div>
       </div>
